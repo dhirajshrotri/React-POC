@@ -58,9 +58,10 @@ export default class MapContainer extends Component {
 
   handleChange (event) {
     const data = { ...this.state.data };
-    if(event.target.name !== 'tag') {
-      data[event.target.name] = Number(event.target.value);
-    }
+    event.target.name !== 'tag' ?
+      data[event.target.name] = Number(event.target.value) :
+      data[event.target.name] = event.target.value;
+    console.log(">>> data is ", data);
     this.setState({ data });
   }
 
