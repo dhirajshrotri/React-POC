@@ -67,7 +67,7 @@ export default class MapContainer extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const url = 'http://35.200.193.2:3000/api';
+    const url = 'https://35.200.193.2:3000/api';
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -78,13 +78,11 @@ export default class MapContainer extends Component {
     };
     return fetch(url, options)
               .then(response => {
-                console.log(">>>> response is :: >>>>", response);
                 return response.json();
               })
               .then(parsedJson => {
                 this.setState({response: parsedJson})
                 this.setState({showingInfoWindow: true})
-                console.log('>>> ', parsedJson);
               })
               .catch(error => {
                 this.setState({showError: true});

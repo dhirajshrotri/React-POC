@@ -97,4 +97,5 @@ const places = [
   "veterinary_care",
   "zoo"
 ];
+
 export default places;
